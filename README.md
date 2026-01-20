@@ -9,15 +9,16 @@ This plugin is a performance‑enhanced rebuild of the Voicemod integration used
 ✔ Instant Page Switching — No more long delays or UI freezes.  
 ✔ Auto‑Update Disabled — The update URL was removed from the manifest to prevent overwriting this optimized version.
 ## 📦 Installation
-1. Download or clone this repository.  
-2. Place the plugin folder into your VSDinside plugins directory.  
-3. (Optional) Rename the folder to avoid conflicts:  
+1. Download or clone this repository.
+2. Make a backup of your index.js file in the C:\Users\<your-username-goes-here>\AppData\Roaming\HotSpot\StreamDock\plugins\com.hotspot.streamdock.voicemod_custom.sdPlugin\plugin
+3. Place the index.js file into your VSDinside plugins directory C:\Users\<your-username-goes-here>\AppData\Roaming\HotSpot\StreamDock\plugins\com.hotspot.streamdock.voicemod_custom.sdPlugin\plugin.  
+4. (Optional) Rename the folder to avoid conflicts and to possibly keep it from updating:  
    com.hotspot.streamdock.voicemod_custom  
-4. Restart VSDinside.  
-5. Add the Voicemod actions to your dashboard.
+5. Restart VSDinside.  
+6. Add the Voicemod actions to your dashboard.
 ## 🔒 Preventing Auto‑Updates
-I renamed the plugin to com.hotspot.streamdock.voicemod_custom.sdPlugin. I'm not sure if that'll help or not. I don't think the plugin auto updates.
-This ensures no silent updates, no overwriting your optimized version, and no reverting to the slow original plugin.
+I renamed the plugin to com.hotspot.streamdock.voicemod_custom.sdPlugin. I'm not sure if that'll help or not. I don't think the plugin auto-updates.
+This (hopefully) ensures no silent updates, no overwriting your optimized version, and no reverting to the slow original plugin.
 ## 🧠 How It Works (Plain English)
 The original plugin reconnected to Voicemod every time a page loaded, reloaded all voices, soundboards, and icons, forced Voicemod to rebuild its audio engine, and caused long delays and UI freezes. The optimized version connects once, remembers everything, only updates when Voicemod actually changes something, and makes page switching instant.
 ## Attribution
