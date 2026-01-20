@@ -1,13 +1,13 @@
 # Voicemod Plugin (Optimized VSDinside Edition)
 A fully optimized, persistent‑connection Voicemod plugin for VSDinside, rewritten for speed, stability, and responsiveness. This version eliminates the long delays, reconnection storms, and repeated API calls found in the original plugin.
 ## 🚀 Overview
-This plugin is a performance‑enhanced rebuild of the Voicemod integration used in VSDinside dashboards. The original plugin repeatedly reconnected to Voicemod and reloaded all data every time a page appeared, causing 20–30 second freezes, UI lag, audio‑engine reinitialization, multiple WebSocket connections, and heavy repeated API calls. This optimized version fixes all of that. This is only for the VSDInside, not any other Stream Decks like the Elgato or otherwise.
+This is for the Voicemod plugin version 2.1, the one you download within the app. This plugin is a performance‑enhanced rebuild of the Voicemod integration used in VSDinside dashboards. The original plugin repeatedly reconnected to Voicemod and reloaded all data every time a page appeared, causing 20–30 second freezes, UI lag, audio‑engine reinitialization, multiple WebSocket connections, and heavy repeated API calls. This optimized version fixes all of that. This is only for the VSDInside, not any other Stream Decks like the Elgato or otherwise.
 ## ⚡ Key Improvements
 ✔ Persistent WebSocket Connection — The plugin now connects to Voicemod once and keeps that connection alive.  
 ✔ Full Caching Layer — The plugin caches all Voicemod data, including voices, current voice, soundboards, bitmaps, background effect status, mute status, hear‑my‑voice status, and mute‑for‑me status.  
 ✔ Zero Re‑Initialization on Page Switch — No more reloading everything when switching pages.  
 ✔ Instant Page Switching — No more long delays or UI freezes.  
-✔ Auto‑Update Disabled — Hopefully it work, just rename the plugin.
+✔ Auto‑Update Disabled — Hopefully it works, just rename the plugin.
 ## 📦 Installation
 1. Download or clone this repository.
 2. Make a backup of your index.js file in the C:\Users\<your-username-goes-here>\AppData\Roaming\HotSpot\StreamDock\plugins\com.hotspot.streamdock.voicemod_custom.sdPlugin\plugin
