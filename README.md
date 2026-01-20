@@ -24,4 +24,4 @@ The original plugin reconnected to Voicemod every time a page loaded, reloaded a
 ## Attribution
 This project is based on the original HotSpot Voicemod plugin. The version I originally obtained was a free, redistributed copy provided by key123.vip. This repository contains an optimized, persistent‑connection version designed for VSDinside.
 ## ❤️ Credits
-Original plugin by HotSpot. Redistribution by key123.vip. Optimization, caching system, and stability improvements by Randy.
+Original plugin by HotSpot. Redistribution by key123.vip. Optimization, caching system, and stability improvements by dhrandy.
