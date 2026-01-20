@@ -7,7 +7,7 @@ This plugin is a performance‑enhanced rebuild of the Voicemod integration used
 ✔ Full Caching Layer — The plugin caches all Voicemod data, including voices, current voice, soundboards, bitmaps, background effect status, mute status, hear‑my‑voice status, and mute‑for‑me status.  
 ✔ Zero Re‑Initialization on Page Switch — No more reloading everything when switching pages.  
 ✔ Instant Page Switching — No more long delays or UI freezes.  
-✔ Auto‑Update Disabled — The update URL was removed from the manifest to prevent overwriting this optimized version.
+✔ Auto‑Update Disabled — Hopefully it work, just rename the plugin.
 ## 📦 Installation
 1. Download or clone this repository.
 2. Make a backup of your index.js file in the C:\Users\<your-username-goes-here>\AppData\Roaming\HotSpot\StreamDock\plugins\com.hotspot.streamdock.voicemod_custom.sdPlugin\plugin
