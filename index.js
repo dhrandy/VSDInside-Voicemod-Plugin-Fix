@@ -260,13 +260,11 @@ let $data = {
         },
         willAppear(data) {
             if (!this.context_pool[data.context]) this.context_pool[data.context] = {};
-            // Use last known state if needed (no explicit cache here)
         },
         keyUp() {
             voiceSend("toggleVoiceChanger");
         }
     },
-
     /* 听见自己的声音开/关 */
     [actionArr[3]]: {
         context_pool: {},
@@ -400,41 +398,45 @@ let $data = {
             voiceSend("setBeepSound", { badLanguage: this.status });
         }
     },
-
-    /* 推送到语音转换器 */
+    /* ============================================================
+       🔥 FIXED ACTION 7 — Push-to-Voice-Changer
+       ============================================================ */
     [actionArr[7]]: {
-        isKeyDown: null,
+        isKeyDown: false,
         context_pool: {},
+
         willAppear(data) {
             if (!this.context_pool[data.context]) this.context_pool[data.context] = {};
             for (let key in this.context_pool) {
                 $SD.setSettings(key, { voiceStatus, longpress: true });
             }
         },
+
         onmessage(data) {
-            if (data.action === "registerClient") {
+            // Only update UI — never toggle again based on events
+            if (data.actionType === "voiceChangerEnabledEvent") {
                 for (let key in this.context_pool) {
                     $SD.setSettings(key, { voiceStatus, longpress: true });
                 }
             }
 
-            if (data.actionType === "toggleVoiceChanger") {
-                if ((this.isKeyDown && !data.actionObject.value) ||
-                    (this.isKeyDown === false && data.actionObject.value)) {
-                    voiceSend("toggleVoiceChanger");
+            if (data.actionType === "voiceChangerDisabledEvent") {
+                for (let key in this.context_pool) {
+                    $SD.setSettings(key, { voiceStatus, longpress: true });
                 }
             }
         },
+
         keyDown() {
             this.isKeyDown = true;
-            voiceSend("getVoiceChangerStatus");
+            voiceSend("setVoiceChanger", { value: true });
         },
+
         keyUp() {
             this.isKeyDown = false;
-            voiceSend("getVoiceChangerStatus");
+            voiceSend("setVoiceChanger", { value: false });
         }
     },
-
     /* 音板播放 */
     [actionArr[8]]: {
         usableBoards: [],
@@ -493,7 +495,6 @@ let $data = {
 
             if (data.actionType === "getBitmap" && data.actionObject.memeId) {
                 let img = data.actionObject.result.default;
-
                 if (img) {
                     $SD.setImage(data.actionID, "data:image/png;base64," + img);
                 } else {
@@ -530,7 +531,6 @@ let $data = {
             voiceSend("stopAllMemeSounds");
         }
     },
-
     /* 为我静音开/关 */
     [actionArr[10]]: {
         context_pool: {},
@@ -568,7 +568,6 @@ let $data = {
         }
     }
 };
-
 /* ============================================================
    STREAM DECK SOCKET REGISTRATION
    ============================================================ */
